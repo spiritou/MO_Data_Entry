@@ -6,7 +6,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Oria\\MoApp\\": "src/"
+            "Oria\\MoApp\\": "app/"
         }
     },
     "authors": [
