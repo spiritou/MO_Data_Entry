@@ -12,7 +12,7 @@ class AuthController
         $this->authService = $authService;
     }
 
-    public function login()
+    public function login(): void
     {
         header('Content-Type: application/json');
 
@@ -28,14 +28,9 @@ class AuthController
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
 
-        $user = $this->authService->authenticate($username, $password);
+        $authenticated = $this->authService->authenticate($username, $password);
 
-        if ($user) {
-
-            // Authentication successful, create session
-            session_regenerate_id(true);
-
-            $_SESSION['user_id'] = $user['id'];
+        if ($authenticated) {
 
             echo json_encode([
                 'success' => true,
