@@ -1,0 +1,1 @@
+/*This page will contain the JavaScript code for the login page. It will handle the form submission, validate the input, and send an AJAX request to the server to authenticate the user.*/
