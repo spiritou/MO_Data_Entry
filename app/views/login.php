@@ -21,18 +21,18 @@
                 <p>Sign in to manage your work hours</p>
             </header>
 
-            <form class="login-form" action="#" method="post">
-                <label class="login-field">
+            <form id="login-form" class="login-form" action="#" method="post">
+                <label class="login-field" for="username">
                     <span>Username</span>
-                    <input type="text" name="username" placeholder="Enter your username" autocomplete="username" required>
+                    <input id="username" type="text" name="username" placeholder="Enter your username" autocomplete="username" required>
                 </label>
 
-                <label class="login-field">
+                <label class="login-field" for="password">
                     <span>Password</span>
-                    <input type="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+                    <input id="password" type="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
                 </label>
 
-                <button type="submit" class="login-submit">Sign in</button>
+                <button id="login-submit" type="submit" class="login-submit">Sign in</button>
             </form>
         </section>
     </main>
