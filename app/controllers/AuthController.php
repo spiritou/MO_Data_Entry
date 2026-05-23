@@ -25,8 +25,10 @@ class AuthController
             return;
         }
 
-        $username = $_POST['username'] ?? '';
-        $password = $_POST['password'] ?? '';
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        $username = $data['username'] ?? '';
+        $password = $data['password'] ?? '';
 
         $authenticated = $this->authService->authenticate($username, $password);
 
