@@ -11,7 +11,7 @@ class Container
         $this->bindings[$key] = $resolver;
     }
 
-    public function get(string $class)
+    public function get(string $class) : object
     {
         if (isset($this->bindings[$class]))
             {
