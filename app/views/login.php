@@ -1,10 +1,11 @@
+<?php require_once __DIR__ . '/../../config/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operations Tracker Login</title>
-    <link rel="stylesheet" href="/MO_app/public/css/login.css">
+    <link rel="stylesheet" href="<?= APP_URL ?>/css/login.css">
 </head>
 <body>
     <main class="login-page">
@@ -36,5 +37,7 @@
             </form>
         </section>
     </main>
+    <!-- called by login.js -->
+    <script src="<?= APP_URL ?>/js/login.js"></script>
 </body>
 </html>
