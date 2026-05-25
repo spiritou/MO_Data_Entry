@@ -28,7 +28,7 @@ class Container
             $dependencies =[];
             foreach ($constructor->getParameters() as $parameter) {
                 $type = $parameter->getType();
-                if ($type && !$type->isBuiltin()) {
+                if ($type instanceof \ReflectionNamedType && !$type->isBuiltin()) {
                     $dependencies[] = $this->get($type->getName());
                 } else {
                     throw new \Exception("Cannot resolve dependency: " . $parameter->getName());
