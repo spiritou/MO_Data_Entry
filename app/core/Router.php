@@ -16,5 +16,10 @@ class Router
     public function run()
     {
         //here we will get the current path and method and match it with the defined routes
+
+        $method = $_SERVER['REQUEST_METHOD'];
+        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+        //check if the route exists
     }
 }
