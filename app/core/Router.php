@@ -8,9 +8,9 @@ class Router
 {
     private $routes = [];
     
-    public function get($path, $handler)
+    public function get($path, $callback)
     {
-        $this->routes['GET'][$path] = $handler;
+        $this->routes['GET'][$path] = $callback;
     }
 
     public function run()
@@ -19,9 +19,27 @@ class Router
 
         $method = $_SERVER['REQUEST_METHOD'];
         $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        //$path = str_replace('/app/public', '', $path); //remove the /app/public part from the path
+        $path = str_replace('/MO_app/public', '', $path); //remove the /app/public part from the path
         
-        var_dump($path);
-        //check if the route exists
+        if(!isset($this->routes[$method])) {
+            //if the route is not defined, we will return a 404 error
+            http_response_code(404);
+            echo "404 Not Found";
+            return;
+        }
+
+        foreach ($this->routes[$method] as $route=>$callback) {
+            $pattern = preg_replace('#\{([^\}]+)\}#', '([^/]+)', $route);
+            $pattern = '#^' . $pattern . '$#';
+            if (preg_match($pattern, $path, $matches)) {
+                array_shift($matches); // Remove the full match
+
+                return [$callback, $matches];
+        }
+    }
+
+        //if no route is matched, we will return a 404 error
+        http_response_code(404);
+        echo "404 Not Found";
     }
 }

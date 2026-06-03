@@ -4,10 +4,12 @@ require_once __DIR__ .'/../vendor/autoload.php';
 require_once __DIR__ .'/../config/config.php';
 
 use App\Core\Container;
+use App\Core\Router;
 use PDO;
 
 $container = new Container();
-
+$router = new Router();
+$router->run(); //this will run the router and check the current path and method
 $container->bind(PDO::class, function () {
    return new PDO(
     'mysql:host=' . DB_HOST . 
@@ -24,3 +26,5 @@ try {
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }
+
+
