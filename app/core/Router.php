@@ -19,7 +19,9 @@ class Router
 
         $method = $_SERVER['REQUEST_METHOD'];
         $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
+        //$path = str_replace('/app/public', '', $path); //remove the /app/public part from the path
+        
+        var_dump($path);
         //check if the route exists
     }
 }
