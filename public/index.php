@@ -9,7 +9,7 @@ use PDO;
 
 $container = new Container();
 $router = new Router();
-$router->run(); //this will run the router and check the current path and method
+$router->dispatch(); //this will run the router and check the current path and method
 $container->bind(PDO::class, function () {
    return new PDO(
     'mysql:host=' . DB_HOST . 
