@@ -6,14 +6,14 @@ namespace App\Core;
 
 class Router
 {
-    private $routes = [];
+    private array $routes = [];
     
-    public function get($path, $callback)
+    public function get(string $path, string $callback): void
     {
         $this->routes['GET'][$path] = $callback;
     }
 
-    public function run()
+    public function dispatch()
     {
         //here we will get the current path and method and match it with the defined routes
 
