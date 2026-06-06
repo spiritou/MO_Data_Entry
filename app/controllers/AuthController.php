@@ -12,6 +12,13 @@ class AuthController
         $this->authService = $authService;
     }
 
+    //this will return a message to show that the controller is working
+    public function index(): void
+    {
+        echo "Welcome to the AuthController!";
+    }
+
+    //this will handle the login logic and return a json response
     public function login(): void
     {
         header('Content-Type: application/json');
