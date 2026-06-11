@@ -20,7 +20,36 @@ require_once __DIR__ . '/../routes/web.php';
     echo "Failed to create Router instance.";
 }*/
 
-list($callback, $params) = $router->dispatch();
-list($controllerClass, $method) = explode('@', $callback);
+$dispatchResult = $router->dispatch();
+
+if (!is_array($dispatchResult) || count($dispatchResult) !== 2) {
+    return;
+}
+
+[$callback, $params] = $dispatchResult;
+
+if (!is_string($callback) || strpos($callback, '@') === false) {
+    http_response_code(500);
+    echo 'Invalid route callback.';
+    return;
+}
+
+list($controllerClass, $method) = explode('@', $callback, 2);
+if (!class_exists($controllerClass)) {
+    $controllerClass = 'App\\Controllers\\' . ltrim($controllerClass, '\\');
+}
+
+if (!class_exists($controllerClass)) {
+    http_response_code(500);
+    echo "Controller {$controllerClass} not found.";
+    return;
+}
+
 $controller = $container->get($controllerClass);
+if (!method_exists($controller, $method)) {
+    http_response_code(500);
+    echo "Method {$method} not found on controller {$controllerClass}.";
+    return;
+}
+
 call_user_func_array([$controller, $method], $params);

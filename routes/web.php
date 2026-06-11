@@ -1,4 +1,4 @@
 <?php
 
-$router->get('/', 'AuthController@index');
+$router->get('/', 'App\\Controllers\\AuthController@index');
 
