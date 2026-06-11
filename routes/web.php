@@ -1,5 +1,4 @@
 <?php
 
-$router->get('/', 'HomeController@index');
+$router->get('/', 'AuthController@index');
 
-echo "Hello World";
