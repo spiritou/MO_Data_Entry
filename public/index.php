@@ -38,8 +38,8 @@ if (!is_string($callback) || strpos($callback, '@') === false) {
 }
 
 list($controllerClass, $method) = explode('@', $callback, 2);
-var_dump($controllerClass); // Debugging output to see the controller class
-var_dump($method); // Debugging output to see the method name
+//var_dump($controllerClass); // Debugging output to see the controller class
+//var_dump($method); // Debugging output to see the method name
 if (!class_exists($controllerClass)) {
     $controllerClass = 'App\\Controllers\\' . ltrim($controllerClass, '\\');
     //var_dump($controllerClass); // Debugging output to see the controller class
@@ -58,6 +58,7 @@ if (!method_exists($controller, $method)) {
     return;
 }
 
-call_user_func_array([$controller, $method], $params);
+//call_user_func_array([$controller, $method], $params);
+var_dump($controller); // Debugging output to see the controller instance
 
 //will need to understand this better
