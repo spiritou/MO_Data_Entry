@@ -40,6 +40,7 @@ class Router
 
         //if no route is matched, we will return a 404 error
         http_response_code(404);
-        echo "404 Not Found";
+        echo "404 Not Found 1";
+        var_dump($path);
     }
 }
