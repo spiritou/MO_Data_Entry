@@ -29,7 +29,7 @@ if (!is_array($dispatchResult) || count($dispatchResult) !== 2) {
 
 [$callback, $params] = $dispatchResult;
 //var_dump($callback); // Debugging output to see the callback
-var_dump($params); // Debugging output to see the params
+//var_dump($params); // Debugging output to see the params
 
 if (!is_string($callback) || strpos($callback, '@') === false) {
     http_response_code(500);
@@ -40,6 +40,7 @@ if (!is_string($callback) || strpos($callback, '@') === false) {
 list($controllerClass, $method) = explode('@', $callback, 2);
 if (!class_exists($controllerClass)) {
     $controllerClass = 'App\\Controllers\\' . ltrim($controllerClass, '\\');
+    var_dump($controllerClass); // Debugging output to see the controller class
 }
 
 if (!class_exists($controllerClass)) {
