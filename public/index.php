@@ -21,6 +21,7 @@ require_once __DIR__ . '/../routes/web.php';
 }*/
 
 $dispatchResult = $router->dispatch();
+var_dump($dispatchResult); // Debugging output to see the dispatch result
 
 if (!is_array($dispatchResult) || count($dispatchResult) !== 2) {
     return;
