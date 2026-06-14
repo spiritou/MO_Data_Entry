@@ -53,3 +53,5 @@ if (!method_exists($controller, $method)) {
 }
 
 call_user_func_array([$controller, $method], $params);
+
+//will need to understand this better
