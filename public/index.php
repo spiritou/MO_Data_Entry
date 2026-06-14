@@ -40,7 +40,7 @@ if (!is_string($callback) || strpos($callback, '@') === false) {
 list($controllerClass, $method) = explode('@', $callback, 2);
 if (!class_exists($controllerClass)) {
     $controllerClass = 'App\\Controllers\\' . ltrim($controllerClass, '\\');
-    var_dump($controllerClass); // Debugging output to see the controller class
+    //var_dump($controllerClass); // Debugging output to see the controller class
 }
 
 if (!class_exists($controllerClass)) {
