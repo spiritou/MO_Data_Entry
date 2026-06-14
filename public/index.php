@@ -21,15 +21,16 @@ require_once __DIR__ . '/../routes/web.php';
 }*/
 
 $dispatchResult = $router->dispatch();
-var_dump($dispatchResult); // Debugging output to see the dispatch result
+//var_dump($dispatchResult); // Debugging output to see the dispatch result
 
 if (!is_array($dispatchResult) || count($dispatchResult) !== 2) {
     return;
 }
 
 [$callback, $params] = $dispatchResult;
-var_dump($callback); // Debugging output to see the callback
+//var_dump($callback); // Debugging output to see the callback
 var_dump($params); // Debugging output to see the params
+
 if (!is_string($callback) || strpos($callback, '@') === false) {
     http_response_code(500);
     echo 'Invalid route callback.';
