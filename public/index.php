@@ -50,8 +50,9 @@ if (!class_exists($controllerClass)) {
     echo "Controller {$controllerClass} not found.";
     return;
 }
-
+var_dump($controllerClass); // Debugging output to see the controller class
 $controller = $container->get($controllerClass);
+
 if (!method_exists($controller, $method)) {
     http_response_code(500);
     echo "Method {$method} not found on controller {$controllerClass}.";
@@ -59,6 +60,6 @@ if (!method_exists($controller, $method)) {
 }
 
 //call_user_func_array([$controller, $method], $params);
-var_dump($controller); // Debugging output to see the controller instance
+
 
 //will need to understand this better
