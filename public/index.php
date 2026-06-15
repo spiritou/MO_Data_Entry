@@ -50,10 +50,14 @@ if (!class_exists($controllerClass)) {
     echo "Controller {$controllerClass} not found.";
     return;
 }
-var_dump($controllerClass); // Debugging output to see the controller class
+//var_dump($controllerClass); // Debugging output to see the controller class
 
 $controller = $container->get($controllerClass);
-var_dump($controller); // Debugging output to see the controller instance
+if(!is_object($controller)) {
+    echo "Failed to instantiate controller {$controllerClass}.";
+} else {
+    //var_dump($controller); // Debugging output to see the controller object
+}
 
 if (!method_exists($controller, $method)) {
     http_response_code(500);
