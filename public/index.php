@@ -57,6 +57,7 @@ if(!is_object($controller)) {
     echo "Failed to instantiate controller {$controllerClass}.";
 } else {
     //var_dump($controller); // Debugging output to see the controller object
+    echo "Controller {$controllerClass} instantiated successfully.";
 }
 
 if (!method_exists($controller, $method)) {
