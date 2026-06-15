@@ -51,7 +51,9 @@ if (!class_exists($controllerClass)) {
     return;
 }
 var_dump($controllerClass); // Debugging output to see the controller class
+
 $controller = $container->get($controllerClass);
+var_dump($controller); // Debugging output to see the controller instance
 
 if (!method_exists($controller, $method)) {
     http_response_code(500);
