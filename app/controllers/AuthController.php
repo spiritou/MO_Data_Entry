@@ -12,10 +12,10 @@ class AuthController
         $this->authService = $authService;
     }
 
-    //this will return a message to show that the controller is working
+    //this will show the login page
     public function index(): void
     {
-        echo "Welcome to the AuthController!";
+        require_once __DIR__ . '/../views/login.php';
     }
 
     //this will handle the login logic and return a json response
