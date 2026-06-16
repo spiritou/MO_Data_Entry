@@ -9,6 +9,10 @@ use App\Core\Container;
 use PDO;
 
 $container = new Container();
+$container->bind(PDO::class, function() {
+    $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_DATABASE;
+    return new PDO($dsn, DB_USERNAME, DB_PASSWORD);
+});
 $router = $container->get(Router::class);
 
 require_once __DIR__ . '/../routes/web.php';
