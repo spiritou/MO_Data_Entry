@@ -13,6 +13,7 @@ $container->bind(PDO::class, function() {
     $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_DATABASE;
     return new PDO($dsn, DB_USERNAME, DB_PASSWORD);
 });
+
 $router = $container->get(Router::class);
 
 require_once __DIR__ . '/../routes/web.php';
@@ -54,7 +55,7 @@ if (!class_exists($controllerClass)) {
     echo "Controller {$controllerClass} not found.";
     return;
 }
-var_dump($controllerClass); // Debugging output to see the controller class
+//var_dump($controllerClass); // Debugging output to see the controller class
 
 $controller = $container->get($controllerClass);
 if(!is_object($controller)) {
