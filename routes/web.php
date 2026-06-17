@@ -2,5 +2,5 @@
 
 $router->get('/', 'App\\Controllers\\AuthController@index');
 
-$router->post('/login', 'App\\Controllers\\AuthController@login');
+$router->post('api/login', 'App\\Controllers\\AuthController@login');
 
