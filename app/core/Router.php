@@ -8,11 +8,13 @@ class Router
 {
     private array $routes = [];
     
+    //this will register a GET route
     public function get(string $path, string $callback): void
     {
         $this->routes['GET'][$path] = $callback;
     }
 
+    //this will register a POST route
     public function post(string $path, string $callback): void
     {
         $this->routes['POST'][$path] = $callback;
