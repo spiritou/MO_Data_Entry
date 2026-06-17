@@ -44,23 +44,7 @@ if (!class_exists($controllerClass)) {
     echo "Controller {$controllerClass} not found.";
     return;
 }
-//var_dump($controllerClass); // Debugging output to see the controller class
 
 $controller = $container->get($controllerClass);
-/*if(!is_object($controller)) {
-    echo "Failed to instantiate controller {$controllerClass}.";
-} else {
-    //var_dump($controller); // Debugging output to see the controller object
-    echo "Controller {$controllerClass} instantiated successfully.";
-}
-
-if (!method_exists($controller, $method)) {
-    http_response_code(500);
-    echo "Method {$method} not found on controller {$controllerClass}.";
-    return;
-}*/
 
 call_user_func_array([$controller, $method], $params);
-
-
-//will need to understand this better
