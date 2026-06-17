@@ -13,6 +13,11 @@ class Router
         $this->routes['GET'][$path] = $callback;
     }
 
+    public function post(string $path, string $callback): void
+    {
+        $this->routes['POST'][$path] = $callback;
+    }
+
     public function dispatch()
     {
         //here we will get the current path and method and match it with the defined routes
