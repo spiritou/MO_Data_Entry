@@ -18,15 +18,7 @@ $router = $container->get(Router::class);
 
 require_once __DIR__ . '/../routes/web.php';
 
-//check if the router object is created successfully
-/*if ($router instanceof Router) {
-    echo "Router instance created successfully!";
-} else {
-    echo "Failed to create Router instance.";
-}*/
-
 $dispatchResult = $router->dispatch();
-//var_dump($dispatchResult); // Debugging output to see the dispatch result
 
 if (!is_array($dispatchResult) || count($dispatchResult) !== 2) {
     return;
@@ -43,11 +35,8 @@ if (!is_string($callback) || strpos($callback, '@') === false) {
 }
 
 list($controllerClass, $method) = explode('@', $callback, 2);
-//var_dump($controllerClass); // Debugging output to see the controller class
-//var_dump($method); // Debugging output to see the method name
 if (!class_exists($controllerClass)) {
     $controllerClass = 'App\\Controllers\\' . ltrim($controllerClass, '\\');
-    //var_dump($controllerClass); // Debugging output to see the controller class
 }
 
 if (!class_exists($controllerClass)) {
