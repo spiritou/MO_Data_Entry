@@ -16,7 +16,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
 
     try {
         // Send an AJAX request to the server to authenticate the user
-        const response = await fetch('/api/login', {
+        const response = await fetch('MO_APP/public/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
