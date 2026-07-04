@@ -8,6 +8,7 @@ class SessionService
         session_regenerate_id(true);
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role'];
     }
 
     public function destroySession(): void
