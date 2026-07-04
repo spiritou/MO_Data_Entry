@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Services\AuthService;
+use App\Core\AuthHelper;
 
 class AuthController
 {
@@ -15,7 +16,12 @@ class AuthController
     //this will show the login page
     public function index(): void
     {
-        require_once __DIR__ . '/../views/login.php';
+        if (AuthHelper::isAdmin()) {
+            //header('Location: /admin/dashboard');
+            require_once __DIR__ . '/../views/login.php';
+            exit;
+        }
+        //require_once __DIR__ . '/../views/login.php';
     }
 
     //this will handle the login logic and return a json response
