@@ -16,14 +16,10 @@ class AuthController
     //this will show the login page
     public function index(): void
     {
-        if (AuthHelper::isAdmin()) {
-            //header('Location: /admin/dashboard');
-            require_once __DIR__ . '/../views/login.php';
-            exit;
-        }
-        //require_once __DIR__ . '/../views/login.php';
+        require_once __DIR__ . '/../views/login.php';
     }
 
+    
     //this will handle the login logic and return a json response
     public function login(): void
     {
