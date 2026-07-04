@@ -5,6 +5,6 @@ namespace App\Core;
 
 class AuthHelper {
     public static function isAdmin(): bool {
-        return isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+        return isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
     }
 }

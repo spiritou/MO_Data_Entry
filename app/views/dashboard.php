@@ -12,7 +12,8 @@ session_start();
     <h1>Dashboard</h1>
     <p>Welcome to your dashboard!</p>
 
-    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+    <?php $userRole = $_SESSION['user_role'] ?? null; ?>
+    <?php if ($userRole === 'admin'): ?>
         <p>You are logged in as <strong>admin</strong>.</p>
         <button>Admin-only button</button>
     <?php else: ?>
