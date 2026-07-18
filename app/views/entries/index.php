@@ -315,7 +315,7 @@ use App\Core\AuthHelper;
 
 </div>
 
-<script src="/MO_app/public/js/dashboard.js"></script>
+<script src="/MO_app/public/js/entry.js"></script>
 
 </body>
 </html>
