@@ -6,5 +6,5 @@ $router->get('/', 'App\\Controllers\\AuthController@index');
 
 $router->post('/api/login', 'App\\Controllers\\AuthController@login');
 
-$router->get('/mydashboard', 'App\\Controllers\\DashboardController@index');
+$router->get('/home', 'App\\Controllers\\EntryController@index');
 

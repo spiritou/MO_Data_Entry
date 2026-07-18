@@ -9,7 +9,7 @@ use App\Core\AuthHelper;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MO Data Entry</title>
 
-    <link rel="stylesheet" href="/MO_app/public/css/dashboard.css">
+    <link rel="stylesheet" href="/MO_app/public/css/entry.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
