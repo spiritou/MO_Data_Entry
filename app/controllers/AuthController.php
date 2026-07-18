@@ -16,7 +16,7 @@ class AuthController
     //this will show the login page
     public function index(): void
     {
-        require_once __DIR__ . '/../views/login.php';
+        require_once __DIR__ . '/../views/auth/login.php';
     }
 
     
