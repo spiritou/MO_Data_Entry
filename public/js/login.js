@@ -28,7 +28,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
 
         if (response.ok) {
             // If authentication is successful, redirect to the dashboard or home page
-            window.location.href = 'MO_APP/public/mydashboard';
+            window.location.href = 'MO_APP/public/home';
         } else {
             // If authentication fails, display an error message
             alert(result.message || 'Login failed. Please try again.');
