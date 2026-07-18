@@ -2,6 +2,8 @@
 
 document.getElementById('login-form').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent the default form submission
+
+    const basePath = window.location.pathname.replace(/\/$/, '');
     
     // Get the input values
     const username = document.getElementById('username').value.trim();
@@ -16,7 +18,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
 
     try {
         // Send an AJAX request to the server to authenticate the user
-        const response = await fetch('MO_APP/public/api/login', {
+        const response = await fetch(`${basePath}/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,7 +30,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
 
         if (response.ok) {
             // If authentication is successful, redirect to the dashboard or home page
-            window.location.href = 'MO_APP/public/home';
+            window.location.href = `${basePath}/home`;
         } else {
             // If authentication fails, display an error message
             alert(result.message || 'Login failed. Please try again.');
