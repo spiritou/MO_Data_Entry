@@ -1,77 +1,12 @@
 <?php
-session_start();
-use App\Core\AuthHelper;
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MO Data Entry</title>
-
-    <link rel="stylesheet" href="/MO_app/public/css/entry.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</head>
-
-<body>
 
 <div class="dashboard-container">
 
-    <!-- ================= Sidebar ================= -->
-
-    <aside class="sidebar">
-
-        <div class="logo">
-
-            <div class="logo-icon">
-                <i class="fa-solid fa-gear"></i>
-            </div>
-
-            <div class="logo-text">
-                <h2>MO Data Entry</h2>
-                <span>Maximo Optimized</span>
-            </div>
-
-        </div>
-
-        <nav class="menu">
-
-            <a href="#" class="menu-item active">
-                <i class="fa-solid fa-table-columns"></i>
-                <span>Dashboard</span>
-            </a>
-
-            <a href="#" class="menu-item">
-                <i class="fa-regular fa-file-lines"></i>
-                <span>Data Entry</span>
-            </a>
-
-            <?php if (AuthHelper::isAdmin()): ?>
-
-                <a href="#" class="menu-item">
-                    <i class="fa-solid fa-users"></i>
-                    <span>User Management</span>
-                </a>
-
-            <?php endif; ?>
-
-        </nav>
-
-        <div class="logout">
-
-            <a href="#" id="logoutBtn">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Logout</span>
-            </a>
-
-        </div>
-
-    </aside>
-
-    <!-- ================= Main ================= -->
+    <?php require __DIR__ . '/../partials/entries/sidebar.php'; ?>
 
     <main class="main-content">
 
@@ -314,8 +249,3 @@ use App\Core\AuthHelper;
     </main>
 
 </div>
-
-<script src="/MO_app/public/js/entry.js"></script>
-
-</body>
-</html>
