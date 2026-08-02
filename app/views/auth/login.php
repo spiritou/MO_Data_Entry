@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operations Tracker Login</title>
-    <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
+
     <main class="login-page">
         <section class="login-panel" aria-labelledby="login-title">
             <div class="login-icon" aria-hidden="true">
@@ -36,7 +28,4 @@
             </form>
         </section>
     </main>
-    <!-- called by login.js -->
-    <script src="js/login.js"></script>
-</body>
-</html>
+   
