@@ -40,11 +40,16 @@ body {
     box-shadow: 4px 0 24px rgba(15, 23, 42, 0.12);
 }
 
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+}
+
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     padding: 4px 6px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
