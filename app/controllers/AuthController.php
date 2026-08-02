@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\Services\AuthService;
 use App\Core\AuthHelper;
+use App\Core\View;
 
 class AuthController
 {
@@ -16,7 +17,7 @@ class AuthController
     //this will show the login page
     public function index(): void
     {
-        require_once __DIR__ . '/../views/auth/login.php';
+        View::render('auth/login', ['title' => 'Operations Tracker Login'], 'guest');
     }
 
     
