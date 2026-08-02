@@ -9,7 +9,13 @@ function isActivePage(string $key, string $activePage): string
 }
 ?>
 
-<aside class="sidebar">
+<button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<aside class="sidebar" id="sidebar">
     <div class="sidebar-top">
         <div class="logo">
             <div class="logo-icon">

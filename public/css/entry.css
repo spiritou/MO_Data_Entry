@@ -29,6 +29,7 @@ body {
 .dashboard-container {
     display: flex;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 }
 
@@ -388,6 +389,10 @@ body {
         align-items: flex-start;
     }
 
+    .page-header p {
+        display: none;
+    }
+
     .section-card {
         width: 100%;
         max-width: 240px;
@@ -395,5 +400,14 @@ body {
 
     .form-grid {
         grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+        justify-content: space-between;
+    }
+
+    .action-buttons .btn {
+        flex: 1;
+        justify-content: center;
     }
 }
