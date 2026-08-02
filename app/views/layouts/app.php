@@ -10,6 +10,7 @@ $content = $content ?? '';
     <title><?= htmlspecialchars($title) ?></title>
 
     <link rel="stylesheet" href="/MO_app/public/css/entry.css">
+    <link rel="stylesheet" href="/MO_app/public/css/sidebar.css">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -17,6 +18,7 @@ $content = $content ?? '';
 <body>
     <?= $content ?>
 
+    <script src="/MO_app/public/js/sidebar.js"></script>
     <script src="/MO_app/public/js/entry.js"></script>
 </body>
 </html>
