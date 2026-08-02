@@ -11,14 +11,19 @@ if (session_status() === PHP_SESSION_NONE) {
         <header class="page-header">
             <div>
                 <h1>Data Entry</h1>
-                <p>Enter hours worked by each staff member of your team.</p>
+                <p>Enter hours worked by each staff of your team.</p>
             </div>
 
-            <div class="section-selector">
-                <label>Section</label>
-                <select>
-                    <option>Maintenance</option>
-                </select>
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="section-body">
+                    <label>Section</label>
+                    <select>
+                        <option>Maintenance</option>
+                    </select>
+                </div>
             </div>
         </header>
 
@@ -37,17 +42,26 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="form-grid">
                     <div class="form-group">
                         <label>Work Order Number <span>*</span></label>
-                        <input type="text" id="workOrder" placeholder="Enter work order number">
+                        <div class="input-wrap">
+                            <input type="text" id="workOrder" placeholder="Enter work order number">
+                            <i class="fa-regular fa-rectangle-list field-icon"></i>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Asset Number <span>*</span></label>
-                        <input type="text" id="assetNumber" placeholder="Enter asset number">
+                        <div class="input-wrap">
+                            <input type="text" id="assetNumber" placeholder="Enter asset number">
+                            <i class="fa-regular fa-rectangle-list field-icon"></i>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Staff Member <span>*</span></label>
-                        <select id="staffMember">
-                            <option value="">Select staff member</option>
-                        </select>
+                        <div class="input-wrap">
+                            <select id="staffMember" class="select-clean">
+                                <option value="">Select staff member</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down field-icon field-icon--static"></i>
+                        </div>
                     </div>
                 </div>
 
@@ -59,7 +73,10 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="form-grid">
                     <div class="form-group">
                         <label>Work Date <span>*</span></label>
-                        <input type="date" id="workDate">
+                        <div class="input-wrap">
+                            <input type="date" id="workDate" class="date-field" placeholder="Select work date">
+                            <i class="fa-regular fa-calendar field-icon"></i>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -79,15 +96,24 @@ if (session_status() === PHP_SESSION_NONE) {
             <div class="form-grid">
                 <div class="form-group">
                     <label>Start Time <span>*</span></label>
-                    <input type="time" id="startTime">
+                    <div class="input-wrap">
+                        <input type="time" id="startTime" class="time-field" placeholder="Select start time">
+                        <i class="fa-regular fa-clock field-icon"></i>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>End Time <span>*</span></label>
-                    <input type="time" id="endTime">
+                    <div class="input-wrap">
+                        <input type="time" id="endTime" class="time-field" placeholder="Select end time">
+                        <i class="fa-regular fa-clock field-icon"></i>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label>Hours Worked</label>
-                    <input type="text" id="hoursWorked" readonly value="0.00">
+                    <label>Hours Worked (Calculated)</label>
+                    <div class="input-wrap input-wrap--unit">
+                        <input type="text" id="hoursWorked" readonly value="0.00">
+                        <span class="field-unit">h</span>
+                    </div>
                 </div>
             </div>
 
