@@ -1,5 +1,12 @@
 <?php
 use App\Core\AuthHelper;
+
+$activePage = $activePage ?? '';
+
+function isActivePage(string $key, string $activePage): string
+{
+    return $key === $activePage ? ' active' : '';
+}
 ?>
 
 <aside class="sidebar">
@@ -16,18 +23,18 @@ use App\Core\AuthHelper;
         </div>
 
         <nav class="menu">
-            <a href="#" class="menu-item active">
+            <a href="#" class="menu-item<?= isActivePage('dashboard', $activePage) ?>">
                 <i class="fa-solid fa-table-columns"></i>
                 <span>Dashboard</span>
             </a>
 
-            <a href="#" class="menu-item">
+            <a href="#" class="menu-item<?= isActivePage('data-entry', $activePage) ?>">
                 <i class="fa-regular fa-file-lines"></i>
                 <span>Data Entry</span>
             </a>
 
             <?php if (AuthHelper::isAdmin()): ?>
-                <a href="#" class="menu-item">
+                <a href="#" class="menu-item<?= isActivePage('user-management', $activePage) ?>">
                     <i class="fa-solid fa-users"></i>
                     <span>User Management</span>
                 </a>
