@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Core;
-use Exception;
+namespace App\Controllers;
+
+use App\Core\View;
 
 class DashboardController
 {
