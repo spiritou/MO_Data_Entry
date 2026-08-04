@@ -29,18 +29,18 @@ function isActivePage(string $key, string $activePage): string
         </div>
 
         <nav class="menu">
-            <a href="#" class="menu-item<?= isActivePage('dashboard', $activePage) ?>">
+            <a href="/MO_app/public/dashboard" class="menu-item<?= isActivePage('dashboard', $activePage) ?>">
                 <i class="fa-solid fa-table-columns"></i>
                 <span>Dashboard</span>
             </a>
 
-            <a href="#" class="menu-item<?= isActivePage('data-entry', $activePage) ?>">
+            <a href="/MO_app/public/data-entry" class="menu-item<?= isActivePage('data-entry', $activePage) ?>">
                 <i class="fa-regular fa-file-lines"></i>
                 <span>Data Entry</span>
             </a>
 
             <?php if (AuthHelper::isAdmin()): ?>
-                <a href="#" class="menu-item<?= isActivePage('user-management', $activePage) ?>">
+                <a href="/MO_app/public/user-management" class="menu-item<?= isActivePage('user-management', $activePage) ?>">
                     <i class="fa-solid fa-users"></i>
                     <span>User Management</span>
                 </a>
@@ -49,7 +49,7 @@ function isActivePage(string $key, string $activePage): string
     </div>
 
     <div class="logout">
-        <a href="#" id="logoutBtn">
+        <a href="/MO_app/public/logout" id="logoutBtn">
             <i class="fa-solid fa-right-from-bracket"></i>
             <span>Logout</span>
         </a>
