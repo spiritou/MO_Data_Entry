@@ -30,7 +30,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
 
         if (response.ok) {
             // If authentication is successful, redirect to the dashboard or home page
-            window.location.href = `${basePath}/home`;
+            window.location.href = `${basePath}/data-entry`;
         } else {
             // If authentication fails, display an error message
             alert(result.message || 'Login failed. Please try again.');

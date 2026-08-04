@@ -1,3 +1,3 @@
-<?php
-
-echo "This page is under construction. Please check back later.";
+<main>
+    <div> this is the dashboard </div>
+</main>

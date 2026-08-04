@@ -33,7 +33,8 @@ if (!is_string($callback) || strpos($callback, '@') === false) {
 }
 
 list($controllerClass, $method) = explode('@', $callback, 2);
-if (!class_exists($controllerClass)) {
+
+if (!class_exists($controllerClass) && strpos($controllerClass, 'App\\') !== 0) {
     $controllerClass = 'App\\Controllers\\' . ltrim($controllerClass, '\\');
 }
 
