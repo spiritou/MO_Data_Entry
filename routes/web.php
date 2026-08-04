@@ -8,3 +8,5 @@ $router->post('/api/login', 'App\\Controllers\\AuthController@login');
 
 $router->get('/home', 'App\\Controllers\\EntryController@index');
 
+$router->get('/dashboard', 'App\\Controllers\\DashboardController@index');
+
