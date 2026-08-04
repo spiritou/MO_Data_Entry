@@ -26,7 +26,13 @@ class Router
 
         $method = $_SERVER['REQUEST_METHOD'];
         $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        $path = str_replace('/MO_app/public', '', $path); //remove the /app/public part from the path
+
+        $path = preg_replace('#^/MO_app/public#i', '', $path);
+        $path = preg_replace('#^/MO_APP/public#i', '', $path);
+
+        if ($path === '') {
+            $path = '/';
+        }
         
         if(!isset($this->routes[$method])) {
             //if the route is not defined, we will return a 404 error
