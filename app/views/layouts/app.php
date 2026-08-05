@@ -1,4 +1,5 @@
 <?php
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -20,7 +21,13 @@ $content = $content ?? '';
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-    <?= $content ?>
+    <div class="dashboard-container">
+        <?php require __DIR__ . '/../partials/sidebar.php'; ?>
+
+        <div class="page-shell">
+            <?= $content ?>
+        </div>
+    </div>
 
     <script src="/MO_app/public/js/sidebar.js"></script>
     <script src="/MO_app/public/js/entry.js"></script>

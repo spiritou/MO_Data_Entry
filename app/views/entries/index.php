@@ -1,11 +1,9 @@
 <?php
+
 $activePage = 'data-entry';
 ?>
 
-<div class="dashboard-container">
-    <?php require __DIR__ . '/../partials/sidebar.php'; ?>
-
-    <main class="main-content">
+<main class="main-content">
         <header class="page-header">
             <div>
                 <h1>Data Entry</h1>
