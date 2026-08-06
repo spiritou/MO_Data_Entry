@@ -381,12 +381,19 @@ body {
 @media (max-width: 900px) {
     .main-content {
         width: 100%;
-        padding: 72px 18px 20px;
+        padding: 20px 18px;
     }
 
     .page-header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+        font-size: 21px;
     }
 
     .page-header p {
@@ -394,8 +401,34 @@ body {
     }
 
     .section-card {
-        width: 100%;
-        max-width: 240px;
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        padding: 7px 10px;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    .section-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+
+    .section-body label {
+        display: none;
+    }
+
+    .section-body select {
+        font-size: 13px;
+        padding-right: 16px;
+    }
+
+    .section-body::after {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+        font-size: 10px;
     }
 
     .form-grid {

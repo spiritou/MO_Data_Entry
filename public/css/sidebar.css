@@ -3,20 +3,22 @@
 .mobile-menu-btn {
     display: none;
     position: fixed;
-    top: 16px;
-    left: 16px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     z-index: 60;
-    width: 42px;
-    height: 42px;
+    width: 26px;
+    height: 64px;
     align-items: center;
     justify-content: center;
     border: none;
-    border-radius: 10px;
-    background: var(--sidebar);
+    border-radius: 0 14px 14px 0;
+    background: var(--accent);
     color: #fff;
-    font-size: 16px;
+    font-size: 13px;
+    padding: 0;
     cursor: pointer;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+    box-shadow: 3px 0 12px rgba(15, 23, 42, 0.3);
 }
 
 .mobile-menu-btn.is-hidden {
