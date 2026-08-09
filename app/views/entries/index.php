@@ -17,7 +17,7 @@ $activePage = 'data-entry';
                 <div class="section-body">
                     <label>Section</label>
                     <select>
-                        <option>Maintenance</option>
+                        <option>Pneumatique</option>
                     </select>
                 </div>
             </div>
