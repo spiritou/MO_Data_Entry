@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Core;
+namespace App\Controllers;
+use App\Core\View;
 use Exception;
 
 class UserController
