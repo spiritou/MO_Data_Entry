@@ -10,5 +10,7 @@ $router->get('/data-entry', 'App\\Controllers\\EntryController@index');
 
 $router->get('/dashboard', 'App\\Controllers\\DashboardController@index');
 
+$router->get('/user-management', 'App\\Controllers\\UserController@index');
+
 
 
