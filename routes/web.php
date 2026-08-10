@@ -12,5 +12,7 @@ $router->get('/dashboard', 'App\\Controllers\\DashboardController@index', ['App\
 
 $router->get('/user-management', 'App\\Controllers\\UserController@index', ['App\\Middleware\\AuthMiddleware']);
 
+$router->get('/logout', 'App\\Controllers\\AuthController@logout', ['App\\Middleware\\AuthMiddleware']);
+
 
 
