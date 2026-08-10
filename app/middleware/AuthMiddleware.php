@@ -7,7 +7,7 @@ class AuthMiddleware
     public static function handle(): void
     {
         if (!isset($_SESSION['user_id'])) {
-           header('Location: /login'); // Redirect to login page
+           header('Location: /MO_app/public/'); // Redirect to login page
             exit;
         }
     }

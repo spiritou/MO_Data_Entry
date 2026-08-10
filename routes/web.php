@@ -6,11 +6,11 @@ $router->get('/', 'App\\Controllers\\AuthController@index');
 
 $router->post('/api/login', 'App\\Controllers\\AuthController@login');
 
-$router->get('/data-entry', 'App\\Controllers\\EntryController@index');
+$router->get('/data-entry', 'App\\Controllers\\EntryController@index', ['App\\Middleware\\AuthMiddleware']);
 
-$router->get('/dashboard', 'App\\Controllers\\DashboardController@index');
+$router->get('/dashboard', 'App\\Controllers\\DashboardController@index', ['App\\Middleware\\AuthMiddleware']);
 
-$router->get('/user-management', 'App\\Controllers\\UserController@index');
+$router->get('/user-management', 'App\\Controllers\\UserController@index', ['App\\Middleware\\AuthMiddleware']);
 
 
 
