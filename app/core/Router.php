@@ -9,15 +9,15 @@ class Router
     private array $routes = [];
     
     //this will register a GET route
-    public function get(string $path, string $callback): void
+    public function get(string $path, string $callback, array $middleware = []): void
     {
-        $this->routes['GET'][$path] = $callback;
+        $this->routes['GET'][$path] = ['callback' => $callback, 'middleware' => $middleware];
     }
 
     //this will register a POST route
-    public function post(string $path, string $callback): void
+    public function post(string $path, string $callback, array $middleware = []): void
     {
-        $this->routes['POST'][$path] = $callback;
+        $this->routes['POST'][$path] = ['callback' => $callback, 'middleware' => $middleware];
     }
 
     public function dispatch()
@@ -41,15 +41,18 @@ class Router
             return;
         }
 
-        foreach ($this->routes[$method] as $route=>$callback) {
+        foreach ($this->routes[$method] as $route=>$config) {
             $pattern = preg_replace('#\{([^\}]+)\}#', '([^/]+)', $route);
             $pattern = '#^' . $pattern . '$#';
             if (preg_match($pattern, $path, $matches)) {
                 array_shift($matches); // Remove the full match
 
-                return [$callback, $matches];
+                foreach ($config['middleware'] as $middlewareClass) {
+                    $middlewareClass::handle(); // Call the handle method of the middleware class
+                }
+                return [$config['callback'], $matches];
+            }
         }
-    }
 
         //if no route is matched, we will return a 404 error
         http_response_code(404);
