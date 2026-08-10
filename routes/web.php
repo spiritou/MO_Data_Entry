@@ -10,7 +10,7 @@ $router->get('/data-entry', 'App\\Controllers\\EntryController@index', ['App\\Mi
 
 $router->get('/dashboard', 'App\\Controllers\\DashboardController@index', ['App\\Middleware\\AuthMiddleware']);
 
-$router->get('/user-management', 'App\\Controllers\\UserController@index', ['App\\Middleware\\AuthMiddleware']);
+$router->get('/user-management', 'App\\Controllers\\UserController@index', ['App\\Middleware\\AuthMiddleware', 'App\\Middleware\\AdminMiddleware']);
 
 $router->get('/logout', 'App\\Controllers\\AuthController@logout', ['App\\Middleware\\AuthMiddleware']);
 
