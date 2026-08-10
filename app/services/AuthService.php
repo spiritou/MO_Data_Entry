@@ -23,4 +23,9 @@ class AuthService
         }
         return false;
     }
+
+    public function logout(): void
+    {
+        $this->sessionService->destroySession();
+    }
 }

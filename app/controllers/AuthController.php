@@ -59,4 +59,11 @@ class AuthController
 
         return;
     }
+
+    public function logout(): void
+    {
+        $this->authService->logout();
+        header('Location: /MO_app/public/');
+        exit;
+    }
 }
