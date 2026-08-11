@@ -16,6 +16,7 @@ $content = $content ?? '';
 
     <link rel="stylesheet" href="/MO_app/public/css/entry.css">
     <link rel="stylesheet" href="/MO_app/public/css/sidebar.css">
+    <link rel="stylesheet" href="/MO_app/public/css/user-management.css">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
