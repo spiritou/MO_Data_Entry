@@ -47,8 +47,8 @@ $totalPages = 3;
             </header>
 
             <section class="stats-grid">
-                <?php foreach ($stats as $stat): ?>
-                    <div class="stat-card">
+                <?php foreach ($stats as $i => $stat): ?>
+                    <div class="stat-card<?= $i === 0 ? '' : ' desktop-only' ?>">
                         <div class="stat-icon stat-icon--<?= htmlspecialchars($stat['tone']) ?>">
                             <i class="fa-solid <?= htmlspecialchars($stat['icon']) ?>"></i>
                         </div>
@@ -74,12 +74,12 @@ $totalPages = 3;
                             <input type="text" id="userSearch" placeholder="Search users...">
                         </div>
 
-                        <button type="button" class="btn btn-outline">
+                        <button type="button" class="btn btn-outline desktop-only">
                             <i class="fa-solid fa-filter"></i>
                             Filter
                         </button>
 
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary desktop-only">
                             <i class="fa-solid fa-plus"></i>
                             Add User
                         </button>
@@ -87,7 +87,7 @@ $totalPages = 3;
                 </div>
 
                 <div class="filter-row">
-                    <div class="form-group">
+                    <div class="form-group desktop-only">
                         <label>Filter by Role</label>
                         <div class="input-wrap">
                             <select id="filterRole" class="select-clean">
@@ -113,7 +113,7 @@ $totalPages = 3;
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group desktop-only">
                         <label>Filter by Status</label>
                         <div class="input-wrap">
                             <select id="filterStatus" class="select-clean">
@@ -132,13 +132,13 @@ $totalPages = 3;
                             <tr>
                                 <th>#</th>
                                 <th>Full Name</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Role</th>
+                                <th class="desktop-only">Username</th>
+                                <th class="desktop-only">Email</th>
+                                <th class="desktop-only">Role</th>
                                 <th>Section</th>
-                                <th>Status</th>
-                                <th>Last Login</th>
-                                <th>Actions</th>
+                                <th class="desktop-only">Status</th>
+                                <th class="desktop-only">Last Login</th>
+                                <th class="desktop-only">Actions</th>
                             </tr>
                         </thead>
                         <tbody id="usersTableBody">
@@ -146,22 +146,22 @@ $totalPages = 3;
                                 <tr>
                                     <td><?= $i + 1 ?></td>
                                     <td class="cell-strong"><?= htmlspecialchars($user['name']) ?></td>
-                                    <td><?= htmlspecialchars($user['username']) ?></td>
-                                    <td><?= htmlspecialchars($user['email']) ?></td>
-                                    <td>
+                                    <td class="desktop-only"><?= htmlspecialchars($user['username']) ?></td>
+                                    <td class="desktop-only"><?= htmlspecialchars($user['email']) ?></td>
+                                    <td class="desktop-only">
                                         <span class="badge badge--<?= htmlspecialchars($user['role']) ?>">
                                             <?= htmlspecialchars($roleLabels[$user['role']]) ?>
                                         </span>
                                     </td>
                                     <td><?= htmlspecialchars($user['section']) ?></td>
-                                    <td>
+                                    <td class="desktop-only">
                                         <span class="status-pill status-pill--<?= htmlspecialchars($user['status']) ?>">
                                             <span class="status-dot"></span>
                                             <?= $user['status'] === 'active' ? 'Active' : 'Inactive' ?>
                                         </span>
                                     </td>
-                                    <td class="cell-muted"><?= htmlspecialchars($user['last_login']) ?></td>
-                                    <td>
+                                    <td class="cell-muted desktop-only"><?= htmlspecialchars($user['last_login']) ?></td>
+                                    <td class="desktop-only">
                                         <div class="row-actions">
                                             <button type="button" class="icon-btn icon-btn--edit" aria-label="Edit user">
                                                 <i class="fa-solid fa-pen"></i>
@@ -198,7 +198,7 @@ $totalPages = 3;
                 </div>
             </section>
 
-            <section class="info-card">
+            <section class="info-card desktop-only">
                 <div class="info-card-icon">
                     <i class="fa-solid fa-circle-info"></i>
                 </div>

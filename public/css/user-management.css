@@ -1,6 +1,6 @@
 /* ---------- Stat cards ---------- */
 
-.user-management .stats-grid {
+.stats-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
@@ -408,15 +408,15 @@
     }
 
     .info-card {
-        grid-template-columns: auto 1fr;
-    }
-
-    .role-legend {
-        grid-column: 1 / -1;
+        display: none;
     }
 }
 
 @media (max-width: 900px) {
+    .desktop-only {
+        display: none !important;
+    }
+
     .stats-grid {
         grid-template-columns: 1fr;
     }

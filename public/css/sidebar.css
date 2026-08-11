@@ -45,6 +45,7 @@
 
 .sidebar {
     width: 280px;
+    flex-shrink: 0;
     height: 100%;
     overflow-y: auto;
     background: linear-gradient(180deg, var(--sidebar) 0%, #0f172a 100%);
