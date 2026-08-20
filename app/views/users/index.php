@@ -44,11 +44,21 @@ $totalPages = 3;
                     <h1>User Management</h1>
                     <p>Manage users, roles and account status.</p>
                 </div>
+
+                <div class="section-card stat-pill mobile-only">
+                    <div class="section-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="section-body">
+                        <label>Total Users</label>
+                        <span class="stat-pill-value"><?= htmlspecialchars((string) $totalUsers) ?></span>
+                    </div>
+                </div>
             </header>
 
             <section class="stats-grid">
-                <?php foreach ($stats as $i => $stat): ?>
-                    <div class="stat-card<?= $i === 0 ? '' : ' desktop-only' ?>">
+                <?php foreach ($stats as $stat): ?>
+                    <div class="stat-card desktop-only">
                         <div class="stat-icon stat-icon--<?= htmlspecialchars($stat['tone']) ?>">
                             <i class="fa-solid <?= htmlspecialchars($stat['icon']) ?>"></i>
                         </div>
@@ -198,7 +208,7 @@ $totalPages = 3;
                 </div>
             </section>
 
-            <section class="info-card desktop-only">
+            <section class="info-card">
                 <div class="info-card-icon">
                     <i class="fa-solid fa-circle-info"></i>
                 </div>
