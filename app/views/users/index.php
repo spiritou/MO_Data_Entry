@@ -89,7 +89,7 @@ $totalPages = 3;
                             Filter
                         </button>
 
-                        <button type="button" class="btn btn-primary desktop-only">
+                        <button type="button" class="btn btn-primary desktop-only" id="addUserBtn">
                             <i class="fa-solid fa-plus"></i>
                             Add User
                         </button>
@@ -233,4 +233,93 @@ $totalPages = 3;
             </section>
         </div>
     </main>
+</div>
+
+<div class="modal-overlay" id="addUserModalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="addUserModalTitle">
+        <div class="modal-header">
+            <div>
+                <h2 id="addUserModalTitle">Add New User</h2>
+                <p>Enter the details for the new user.</p>
+            </div>
+            <button type="button" class="modal-close" id="addUserModalClose" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form id="addUserForm">
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name <span>*</span></label>
+                        <input type="text" id="newUserFullName" placeholder="Enter full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Username <span>*</span></label>
+                        <input type="text" id="newUserUsername" placeholder="Enter username" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email <span>*</span></label>
+                        <input type="email" id="newUserEmail" placeholder="Enter email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Role <span>*</span></label>
+                        <div class="input-wrap">
+                            <select id="newUserRole" class="select-clean" required>
+                                <option value="" selected disabled>Select role</option>
+                                <!-- Populated from the database later -->
+                            </select>
+                            <i class="fa-solid fa-chevron-down field-icon field-icon--static"></i>
+                        </div>
+                        <span class="form-hint">Select the user's role in the system.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Section <span>*</span></label>
+                    <div class="input-wrap">
+                        <select id="newUserSection" class="select-clean" required>
+                            <option value="" selected disabled>Select section</option>
+                            <!-- Populated from the database later -->
+                        </select>
+                        <i class="fa-solid fa-chevron-down field-icon field-icon--static"></i>
+                    </div>
+                    <span class="form-hint">Select the section this user belongs to.</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Password <span>*</span></label>
+                        <div class="input-wrap">
+                            <input type="password" id="newUserPassword" placeholder="Enter password" minlength="8" required>
+                            <button type="button" class="toggle-password field-icon" data-target="newUserPassword" aria-label="Show password">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password <span>*</span></label>
+                        <div class="input-wrap">
+                            <input type="password" id="newUserPasswordConfirm" placeholder="Confirm password" minlength="8" required>
+                            <button type="button" class="toggle-password field-icon" data-target="newUserPasswordConfirm" aria-label="Show password">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <span class="form-hint">Password must be at least 8 characters long.</span>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="addUserCancelBtn">Cancel</button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Create User
+                </button>
+            </div>
+        </form>
+    </div>
 </div>

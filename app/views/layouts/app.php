@@ -36,5 +36,6 @@ $content = $content ?? '';
 
     <script src="/MO_app/public/js/sidebar.js"></script>
     <script src="/MO_app/public/js/entry.js"></script>
+    <script src="/MO_app/public/js/add_user.js"></script>
 </body>
 </html>
