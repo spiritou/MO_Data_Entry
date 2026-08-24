@@ -1,0 +1,1 @@
+/*this is a simple entry script for the main page */
